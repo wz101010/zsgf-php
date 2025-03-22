@@ -3,8 +3,11 @@ name: Tag on Push or Manual Trigger
 on:
   push:
     branches:
-      - main  # 监听 main 分支的推送
-  workflow_dispatch:  # 允许手动触发
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write  # 赋予 GITHUB_TOKEN 推送标签的权限
 
 jobs:
   create_tag:
@@ -27,15 +30,11 @@ jobs:
           else
             echo "TAG_EXISTS=false" >> $GITHUB_ENV
           fi
-          
+
       - name: 设置 Git 用户信息
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-
-      - name: 允许 GitHub Actions 推送
-        run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/wz101010/zsgf-php.git
 
       - name: 创建并推送 Git Tag
         if: env.TAG_EXISTS == 'false'
