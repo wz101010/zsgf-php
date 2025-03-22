@@ -9,7 +9,8 @@ on:
 jobs:
   create_tag:
     runs-on: ubuntu-latest
-
+    environment: PROD  # 绑定到 GitHub 环境
+    
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
@@ -32,11 +33,11 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-      
+
       - name: 允许 GitHub Actions 推送
         run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/wz101010/zsgf-php.git
-      
+          git remote set-url origin https://x-access-token:${{ secrets.TOKEN }}@github.com/wz101010/zsgf-php.git
+
       - name: 创建并推送 Git Tag
         if: env.TAG_EXISTS == 'false'
         run: |
