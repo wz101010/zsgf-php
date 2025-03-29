@@ -1,0 +1,45 @@
+# # User
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional]
+**platform** | **string** |  | [optional]
+**union_id** | **string** |  | [optional]
+**nick_name** | **string** |  | [optional]
+**avatar** | **string** |  | [optional]
+**data** | **string** |  | [optional]
+**user_name** | **string** |  | [optional]
+**pwd** | **string** |  | [optional]
+**email** | **string** |  | [optional]
+**email_is_valid** | **bool** |  | [optional]
+**phone** | **string** |  | [optional]
+**phone_is_valid** | **bool** |  | [optional]
+**relation_chain** | **string** |  | [optional]
+**interest_tags** | **string** |  | [optional]
+**biography** | **string** |  | [optional]
+**gender** | **string** |  | [optional]
+**birthday** | **\DateTime** |  | [optional]
+**occupation** | **string** |  | [optional]
+**education** | **string** |  | [optional]
+**contact** | **string** |  | [optional]
+**languages** | **string** |  | [optional]
+**social_links** | **string** |  | [optional]
+**relationship_status** | **string** |  | [optional]
+**company** | **string** |  | [optional]
+**industry** | **string** |  | [optional]
+**company_position** | **string** |  | [optional]
+**private_settings** | **string** |  | [optional]
+**is_lock** | **bool** |  | [optional]
+**lock_until** | **\DateTime** |  | [optional]
+**enable_user_name_sign_in** | **bool** |  | [optional]
+**enable_email_sign_in** | **bool** |  | [optional]
+**enable_phone_sign_in** | **bool** |  | [optional]
+**enable_union_id_sign_in** | **bool** |  | [optional]
+**enable_o_auth** | **bool** |  | [optional]
+**enable2_fa_auth** | **bool** |  | [optional]
+**create_date** | **\DateTime** |  | [optional]
+**last_update** | **\DateTime** |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
