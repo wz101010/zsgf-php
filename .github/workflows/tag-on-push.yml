@@ -1,0 +1,43 @@
+name: Tag on Push or Manual Trigger
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write  # 赋予 GITHUB_TOKEN 推送标签的权限
+
+jobs:
+  create_tag:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 解析 composer.json 版本号
+        id: get_version
+        run: echo "VERSION=$(jq -r .version composer.json)" >> $GITHUB_ENV
+
+      - name: 检查 Tag 是否已存在
+        id: check_tag
+        run: |
+          if git ls-remote --tags origin | grep -q "refs/tags/${VERSION}"; then
+            echo "Tag ${VERSION} 已存在，跳过创建"
+            echo "TAG_EXISTS=true" >> $GITHUB_ENV
+          else
+            echo "TAG_EXISTS=false" >> $GITHUB_ENV
+          fi
+
+      - name: 设置 Git 用户信息
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: 创建并推送 Git Tag
+        if: env.TAG_EXISTS == 'false'
+        run: |
+          git tag -a "${VERSION}" -m "Release ${VERSION}"
+          git push origin "${VERSION}"
