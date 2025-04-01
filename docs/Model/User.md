@@ -1,0 +1,45 @@
+# # User
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **int** | 用户唯一标识 | [optional]
+**platform** | **string** | 用户所在平台 | [optional]
+**union_id** | **string** | 用户所在平台的唯一标识 | [optional]
+**nick_name** | **string** | 昵称 | [optional]
+**avatar** | **string** | 头像 | [optional]
+**data** | **string** | 其他数据 | [optional]
+**user_name** | **string** | 用户名 | [optional]
+**pwd** | **string** | 用户密码 | [optional]
+**email** | **string** | 邮箱地址 | [optional]
+**email_is_valid** | **bool** | 邮箱已验证 | [optional]
+**phone** | **string** | 手机号码 | [optional]
+**phone_is_valid** | **bool** | 手机号码已验证 | [optional]
+**relation_chain** | **string** | 关系链 | [optional]
+**interest_tags** | **string** | 兴趣标签 | [optional]
+**biography** | **string** | 个人简介 | [optional]
+**gender** | **string** | 性别 | [optional]
+**birthday** | **\DateTime** | 生日 | [optional]
+**occupation** | **string** | 职业 | [optional]
+**education** | **string** | 学历 | [optional]
+**contact** | **string** | 联系方式 | [optional]
+**languages** | **string** | 语言 | [optional]
+**social_links** | **string** | 社交网络链接 | [optional]
+**relationship_status** | **string** | 婚姻状态 | [optional]
+**company** | **string** | 公司 | [optional]
+**industry** | **string** | 行业 | [optional]
+**company_position** | **string** | 行业职位 | [optional]
+**private_settings** | **string** | 私密设置 | [optional]
+**is_lock** | **bool** | 账户是否锁定 | [optional]
+**lock_until** | **\DateTime** | 账户锁定截止时间 | [optional]
+**enable_user_name_sign_in** | **bool** | 能使用用户名登录 | [optional]
+**enable_email_sign_in** | **bool** | 能使用邮箱登录 | [optional]
+**enable_phone_sign_in** | **bool** | 能使用电话号码登录 | [optional]
+**enable_union_id_sign_in** | **bool** | 能使用联合身份标识登录 | [optional]
+**enable_o_auth** | **bool** | 能使用OAuth认证方式登录 | [optional]
+**enable2_fa_auth** | **bool** | 启用双因素认证登录 | [optional]
+**create_date** | **\DateTime** | 创建时间 | [optional]
+**last_update** | **\DateTime** | 最后更新时间 | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
